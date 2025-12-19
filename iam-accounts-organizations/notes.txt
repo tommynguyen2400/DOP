@@ -4,3 +4,9 @@
 - Nên dùng managed policy để quản lý sẽ tiết kiệm chi phí hơn so với inline policy
 
 
+
+
+# Công cụ monitor và trace log, công cụ quét security source code
+# Có SOC để monitor
+
+
