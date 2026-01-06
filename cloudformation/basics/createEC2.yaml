@@ -1,0 +1,14 @@
+# create EC2 with tags and updated description
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple to create EC2
+Resources:
+  MyEC2Instances:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-05f071c65e32875a8
+      InstanceType: t2.micro
+      Tags:
+        - Value: MyFirstEC2InstanceUpdated
+          Key: Name
+        - Value: Development
+          Key: Environment

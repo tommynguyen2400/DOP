@@ -1,0 +1,25 @@
+# create multiple resources: EC2 and Security Group
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Simple to create EC2 and Security Group
+Resources:
+  DemoEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: ami-05f071c65e32875a8
+      InstanceType: t2.micro
+      Tags:
+        - Value: MyFirstEC2InstanceUpdated
+          Key: Name
+        - Value: Development
+          Key: Environment
+      SecurityGroups:
+        - !Ref MySecurityGroup
+  MySecurityGroup:
+    Type: AWS::EC2::SecurityGroup
+    Properties:
+      GroupDescription: Enable SSH access via port 22
+      SecurityGroupIngress:
+        - IpProtocol: tcp
+          FromPort: 22
+          ToPort: 22
+          CidrIp: 0.0.0.0/0
