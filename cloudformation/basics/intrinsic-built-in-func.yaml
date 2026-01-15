@@ -14,5 +14,3 @@ Resources:
               - a
               - EC2
           Key: Name
-        - Value: Development
-          Key: Environment
