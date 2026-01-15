@@ -1,0 +1,17 @@
+Mappings:
+  RegionMap:
+    ap-southeast-1:
+      PROD: ami-01dc51e87421923b6
+      UAT: ami-0b8d527345fdace59
+    ap-southeast-2:
+      PROD: ami-01dc51e87421923b6
+      UAT: ami-0b8d527345fdace59
+Resources:
+  MyEC2Instance:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId: !FindInMap
+        - RegionMap
+        - !Ref AWS::Region
+        - UAT
+      InstanceType: t3.micro
