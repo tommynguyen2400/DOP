@@ -1,4 +1,1 @@
 # to learn CloudFormation
-
-
-
